@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Controllerapp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= link_to 'Home', root_path %> |
+<%= link_to 'Shoe Categories', shoe_categories_path %> |
+<%= link_to 'All shoes', shoes_path %>
+<h1>Admin page</h1>
+<%= yield %>
+
+</body>
+</html>

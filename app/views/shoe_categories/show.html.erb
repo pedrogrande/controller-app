@@ -1,0 +1,29 @@
+<p id="notice"><%= alert %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shoe_category.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @shoe_category.description %>
+</p>
+
+<h3>Shoes in this category</h3>
+<ul>
+  <% @shoe_category.shoes.each do |shoe| %>
+    <li><%= link_to shoe.name, shoe_path(shoe) %></li>
+  <% end %>
+</ul>
+<hr>
+
+<%= link_to "Add new shoe to this category", new_shoe_path(category: @shoe_category.id) %>
+
+
+
+
+
+
+<%= link_to 'Edit', edit_shoe_category_path(@shoe_category) %> |
+<%= link_to 'Back', shoe_categories_path %>

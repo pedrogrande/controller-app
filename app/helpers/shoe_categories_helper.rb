@@ -1,0 +1,2 @@
+module ShoeCategoriesHelper
+end

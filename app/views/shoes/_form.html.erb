@@ -1,0 +1,21 @@
+<%= simple_form_for(@shoe) do |f| %>
+  <%= f.error_notification %>
+  <% if params[:category] %>
+    <h3>Category: <%= @shoe_category.name %></h3>
+  <% end %>
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :picture %>
+    <% if params[:category] %>
+        <%= f.input :shoe_category_id, as: :hidden, input_html: { value: params[:category]} %>
+    <% else %>
+      <%= f.association :shoe_category %>
+    <% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
